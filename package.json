@@ -1,0 +1,65 @@
+{
+  "name": "daypass",
+  "version": "1.0.0",
+  "description": "schedule your spa day right from your fingertips",
+  "main": "server.js",
+  "author": "aanumba",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"nodemon server.js\" \"tsc -w\"",
+    "build": "ionic-app-scripts build --dev",
+    "watch": "ionic-app-scripts watch --watch",
+    "sass": "ionic-app-scripts sass",
+    "copy": "ionic-app-scripts copy"
+  },
+  "config": {
+    "ionic_watch": "./config/watch.config.js",
+    "ionic_sass": "./config/sass.config.js",
+    "ionic_copy": "./config/copy.config.js"
+  },
+  "dependencies": {
+    "@angular/common": "2.1.1",
+    "@angular/compiler": "2.1.1",
+    "@angular/compiler-cli": "2.1.1",
+    "@angular/core": "2.1.1",
+    "@angular/forms": "2.1.1",
+    "@angular/http": "2.1.1",
+    "@angular/platform-browser": "2.1.1",
+    "@angular/platform-browser-dynamic": "2.1.1",
+    "@angular/platform-server": "2.1.1",
+    "@angular/router": "3.1.1",
+    "@angular/upgrade": "2.1.1",
+    "body-parser": "*",
+    "core-js": "^2.4.1",
+    "cors": "*",
+    "dotenv": "^2.0.0",
+    "es6-shim": "^0.35.1",
+    "express": "^4.14.0",
+    "ionic-angular": "^2.0.0-rc.2",
+    "ionic-native": "^2.2.6",
+    "ionicons": "3.0.0",
+    "jquery": "^3.1.1",
+    "mongodb": "^2.2.11",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "serve-favicon": "*",
+    "systemjs": "0.19.39",
+    "zone.js": "0.6.21"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "0.0.46",
+    "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.45",
+    "concurrently": "^3.0.0",
+    "typescript": "^2.0.6"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": []
+}

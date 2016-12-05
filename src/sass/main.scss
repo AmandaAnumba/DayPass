@@ -1,0 +1,66 @@
+// vendor styles
+// ------------------------------------------------------------
+@import "compass";
+
+
+// partials + mixins + responsiveness
+// ------------------------------------------------------------
+@import "partials/variables";
+
+
+
+// page components
+// ------------------------------------------------------------
+
+
+
+// page styles
+// ------------------------------------------------------------
+.results-list {
+	padding-top: 50px;
+}
+
+.listing-backdrop { 
+	position: relative;
+	height: 35vh;
+	width: 100%;
+}
+
+.backdrop__img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: url('/images/spa3.jpg') no-repeat center center fixed;
+	background-size: cover;
+	// @include background-size(cover);
+}
+
+.backdrop__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,1));
+}
+
+.listing-info {
+	margin-top: 30vh;
+	font-family: $font-family-sans-serif;
+	text-align: center;
+}
+
+.listing__name {
+	font-size: 35px;
+	font-family: $font-family-suranna;
+	font-weight: bold;
+}
+
+.listing__addr,
+.listing__type {
+	font-size: 14px;
+	color: #777;
+	font-weight: 300;
+}

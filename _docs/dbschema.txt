@@ -1,0 +1,117 @@
+Business
+========
+id (pk)
+name
+address
+phone
+website
+image
+rating
+locations (coords?)
+stylists ---- > (one to many; one business many stylists)
+appointments
+calendar
+contact name
+contact email
+contact phone number
+deals (one to many; one business many deals)
+reviews
+type (hair salon; nail salon; spa) (can be many choices)
+
+
+
+Stylist  (extends User class?)
+=======
+id (pk)
+name
+business
+email
+phone
+speciality-----> (one to many; one stylist can belong to many businesses)
+avatar
+
+
+
+
+Appointment
+===========
+id (pk)
+date
+time
+business name
+user (foreign key -> User )
+stylist (foreign key -> Stylist )
+isPassed
+isFulfilled
+(if rescheduled just update the appointment)
+
+
+
+
+
+User 
+====
+name
+phone
+email
+avatar
+reviews
+appointments (one to many [one user many appointments])
+deals
+
+
+
+
+Review
+======
+id (pk)
+reviewer (foreign key -> User)
+title
+content
+date
+updated date
+business (one to one; one business one review)
+
+
+
+
+Service (list of basic services offered; check website for details)
+=======
+Hair
+    + cut
+    + style
+    + blowdry
+    + wash
+    + color
+    + highlights
+    + (consults required? )
+
+Nails
+    + color
+    + gel
+    + acryllic
+
+Spa
+    + massage
+    + wax
+    + laser hair removal
+
+
+
+Deals
+=====
+business (one to one)
+deal type (sale; promotion; special; groupon)
+deal text
+isClaimed
+promotion start
+promotion end
+limit (int; number of these that can be claimed)
+isExpired
+
+
+
+
+Business types (clarification)
+==============================
++ 

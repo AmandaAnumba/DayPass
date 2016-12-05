@@ -1,0 +1,35 @@
+MVP: See list of businesses in your area; be able to book an appointment
+Business MVP: Register your business, services, stylists, manager to approve appointments
+
+Iteration 1 : MVP
+    - results page (salons near me)
+        + list of salons near user
+        + dummy data
+    - salon page
+        + mock up of salon's info
+            * services offered
+            * stylists
+            * calendar for available appointments
+            * reviews
+    - sign up for reservation
+    - view reservation confirmation
+    - receive confirmation email
+
+Iteration 2 : MVP Extended
+    - Search refinements
+    - Quick reserve
+
+Iteration 3 : User Account
+    - user can log in 
+    - user can sign up
+    - user can view and update account information
+    - user can view and cancel existing reservations
+    - user can view past reservations 
+    - user can view coupons
+    - user can save and view businesses as favorites
+
+Iteration 3 : Business MVP
+    - Register your business
+    - list services
+    - list stylists
+    - Designate a manager to approve appointments

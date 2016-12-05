@@ -1,0 +1,27 @@
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,900|Playfair+Display:900i';
+
+// -------- colors --------
+$coral:							#ff8a78;
+$acid: 							#C5FB31;
+$royalblue: 					#708FFF;
+$cobalt: 						#485cd7;
+$yellow: 						#fbbd08;
+$teal: 							#94c4c8;
+$red: 							#FF4D4D;
+$pink: 							#dd90b0;
+$gray-dark:                 	#373a3c !default;
+$gray:                      	#55595c !default;
+$gray-light:                	#818a91 !default;
+$gray-lighter:              	#eceeef !default;
+$gray-lightest:             	#f7f7f9 !default;
+$highlight: 					$acid;
+$rose:							#dea4c1;
+
+
+
+// -------- Typography --------
+$font-family-sans-serif:		'Lato', Arial, sans-serif !default;
+$font-family-serif:				"Times New Roman", Times, serif !default;
+$font-family-monospace:			Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:				$font-family-sans-serif !default;
+$font-family-suranna:			'Playfair Display', serif;

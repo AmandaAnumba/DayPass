@@ -1,0 +1,14 @@
+1. Check node version
+    $ node -v
+    Note: currently working with v4.5.0
+2. Check npm version
+    $ npm -v
+    Note: currently working with v3.10.8
+    Run the following to update
+    $ npm install npm -g
+3. Install local npm packages
+    $ npm install
+4. Update local npm packages
+    $ npm update
+5. Run locally
+    $ npm start
