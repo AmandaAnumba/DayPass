@@ -8,6 +8,7 @@ import { BUSINESSES } from './mock-businesses';
 @Injectable()
 export class BusinessService {
     list: Business[] = [];
+    selected: Business;
 
     constructor( private logger: LoggerService ) {}
 
@@ -23,9 +24,13 @@ export class BusinessService {
     }
 
     /* Get a specific business */
-    getBusiness(id: number): Promise<Business> {
+    getBusiness(id: number) {
+    // getBusiness(id: number): Promise<Business> {
         this.logger.log('BusinessService.getBusiness( ' + id + ' )');
-        return this.getBusinesses()
-            .then( businesses => businesses.find(business => business.id === id));
+        this.list = BUSINESSES;
+        this.selected = this.list.find(business => business.id === id);
+        return this.selected;
+        // return this.getBusinesses()
+        //     .then( businesses => businesses.find(business => business.id === id));
     }
 }

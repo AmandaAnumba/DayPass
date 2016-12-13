@@ -10,16 +10,18 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="loginModal">
     <ion-list>
         <ion-item>
             <ion-label color="primary" floating>Username</ion-label>
-            <ion-input type="text" name="name" [(ngModel)]="user.name" required></ion-input>
+            <ion-input type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required></ion-input>
+            <div class="help-block" *ngIf="name.errors && (name.dirty || name.touched)">Please enter your username.</div>
         </ion-item>
 
         <ion-item>
             <ion-label color="primary" floating>Password</ion-label>
-            <ion-input type="password" name="password" [(ngModel)]="user.password" required></ion-input>
+            <ion-input type="password" name="password" [(ngModel)]="user.password" #name="ngModel" required></ion-input>
+            <div class="help-block" *ngIf="name.errors && (name.dirty || name.touched)">Please enter your username.</div>
         </ion-item>
     </ion-list>
 

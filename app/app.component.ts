@@ -4,7 +4,7 @@ import { Platform, MenuController, Nav, ModalController } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 
 import { SearchComponent } from './search/search.component';
-import { ListingComponent } from './listing/listing.component';
+import { AccountComponent } from './account/account.component';
 import { LoginComponent } from './user/login.component';
 
 
@@ -14,9 +14,9 @@ import { LoginComponent } from './user/login.component';
 
 export class AppComponent implements OnInit {
     @ViewChild(Nav) nav: Nav;
-
-    // make SearchComponent the temp root page
-    rootPage: any = SearchComponent;
+    
+    rootPage: any = AccountComponent;  // make SearchComponent the temp root page
+    // rootPage: any = SearchComponent;  // make SearchComponent the temp root page
     pages: Array<{title: string, component: any}>;
 
     constructor(
@@ -29,8 +29,8 @@ export class AppComponent implements OnInit {
         // this.initializeApp();
 
         this.pages = [
-            { title: 'Salons Near Me', component: SearchComponent },
-            // { title: 'Listing', component: ListingComponent },
+            { title: 'Explore', component: SearchComponent },
+            { title: 'My Account', component: AccountComponent },
         ];
     }
 
@@ -41,9 +41,7 @@ export class AppComponent implements OnInit {
     }
 
     openPage(page) {
-        // close the menu when clicking a link from the menu
         this.menu.close();
-        // navigate to the new page if it is not the current page
         this.nav.setRoot(page.component);
     }
 

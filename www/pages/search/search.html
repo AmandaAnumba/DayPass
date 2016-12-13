@@ -1,22 +1,55 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary" no-border-bottom>
         <button ion-button icon-only menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Salons Near Me</ion-title>
+
+        <ion-title>Explore</ion-title>
     </ion-navbar>
+
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="browseType">
+            <ion-segment-button value="nearMe">Near Me</ion-segment-button>
+            <ion-segment-button value="trending">Trending</ion-segment-button>
+            <ion-segment-button value="recent">Recent Places</ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
-    <ion-list>
-        <ion-item *ngFor="let result of results">
-            <ion-thumbnail item-left>
-                <img src="{{ result.image }}">
-            </ion-thumbnail>
-            <h2>{{ result.name }}</h2>
-            <p>{{ result.location }} miles • {{ result.rating }} stars</p>
-            <a clear item-right (click)="showListing(result.id)">View</a>
-        </ion-item>
-    </ion-list>
+    <div [ngSwitch]="browseType">
+        <ion-list *ngSwitchCase="'nearMe'">
+            <ion-item *ngFor="let result of results">
+                <ion-thumbnail item-left>
+                    <img src="{{ result.image }}" />
+                </ion-thumbnail>
+                <h2>{{ result.name }}</h2>
+                <p>{{ result.location }} miles • {{ result.rating }} stars</p>
+                <a clear item-right (click)="showListing(result.id)">View</a>
+            </ion-item>
+        </ion-list>
+
+        <div *ngSwitchCase="'trending'">
+            <ion-card *ngFor="let result of results">
+                <img src="{{ result.image }}" />
+                <ion-card-content>
+                    <ion-card-title>{{ result.name }}</ion-card-title>
+                    <p>{{ result.location }} miles • {{ result.rating }} stars</p>
+                    <a clear item-right (click)="showListing(result.id)">View</a>
+                </ion-card-content>
+            </ion-card>
+        </div>
+
+        <ion-list *ngSwitchCase="'recent'">
+            <ion-item *ngFor="let result of results">
+                <ion-thumbnail item-left>
+                    <img src="{{ result.image }}" />
+                </ion-thumbnail>
+                <h2>{{ result.name }}</h2>
+                <p>{{ result.location }} miles • {{ result.rating }} stars</p>
+                <a clear item-right (click)="showListing(result.id)">View</a>
+            </ion-item>
+        </ion-list>
+    </div>
 </ion-content>

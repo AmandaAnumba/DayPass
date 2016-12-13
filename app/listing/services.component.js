@@ -12,32 +12,27 @@ var core_1 = require("@angular/core");
 var ionic_angular_1 = require('ionic-angular');
 var logger_service_1 = require("../core/logger.service");
 var business_service_1 = require("../search/business.service");
-var ListingComponent = (function () {
-    function ListingComponent(businessService, logger, nav, navParams) {
+var ServicesComponent = (function () {
+    function ServicesComponent(businessService, logger, nav, navParams) {
         this.businessService = businessService;
         this.logger = logger;
         this.nav = nav;
         this.navParams = navParams;
-        this.logClass = "ListingComponent";
+        this.logClass = "ServicesComponent";
     }
-    ListingComponent.prototype.ngOnInit = function () {
+    ServicesComponent.prototype.ngOnInit = function () {
         this.logger.log(this.logClass + '.init()');
-        this.listingId = this.navParams.get('listing');
-        this.logger.log(this.listingId.toString());
-        this.listing = this.businessService.getBusiness(+this.listingId);
-        this.logger.log(this.listing.name);
-        // .then(business => this.listing = business);
     };
-    ListingComponent.prototype.goBack = function () {
+    ServicesComponent.prototype.goBack = function () {
         this.nav.pop();
     };
-    ListingComponent = __decorate([
+    ServicesComponent = __decorate([
         core_1.Component({
-            templateUrl: 'pages/listing/listing.html',
+            templateUrl: 'pages/listing/services.html',
             providers: [business_service_1.BusinessService, logger_service_1.LoggerService]
         }), 
         __metadata('design:paramtypes', [business_service_1.BusinessService, logger_service_1.LoggerService, ionic_angular_1.NavController, ionic_angular_1.NavParams])
-    ], ListingComponent);
-    return ListingComponent;
+    ], ServicesComponent);
+    return ServicesComponent;
 }());
-exports.ListingComponent = ListingComponent;
+exports.ServicesComponent = ServicesComponent;

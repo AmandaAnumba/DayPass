@@ -12,19 +12,20 @@ var core_1 = require('@angular/core');
 var ionic_angular_1 = require('ionic-angular');
 var ionic_native_1 = require('ionic-native');
 var search_component_1 = require('./search/search.component');
+var account_component_1 = require('./account/account.component');
 var login_component_1 = require('./user/login.component');
 var AppComponent = (function () {
     function AppComponent(platform, menu, modalCtrl) {
         this.platform = platform;
         this.menu = menu;
         this.modalCtrl = modalCtrl;
-        // make SearchComponent the temp root page
-        this.rootPage = search_component_1.SearchComponent;
+        this.rootPage = account_component_1.AccountComponent; // make SearchComponent the temp root page
     }
     AppComponent.prototype.ngOnInit = function () {
         // this.initializeApp();
         this.pages = [
-            { title: 'Salons Near Me', component: search_component_1.SearchComponent },
+            { title: 'Explore', component: search_component_1.SearchComponent },
+            { title: 'My Account', component: account_component_1.AccountComponent },
         ];
     };
     AppComponent.prototype.initializeApp = function () {
@@ -33,9 +34,7 @@ var AppComponent = (function () {
         });
     };
     AppComponent.prototype.openPage = function (page) {
-        // close the menu when clicking a link from the menu
         this.menu.close();
-        // navigate to the new page if it is not the current page
         this.nav.setRoot(page.component);
     };
     AppComponent.prototype.presentLoginModal = function () {

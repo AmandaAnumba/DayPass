@@ -15,6 +15,7 @@ import { ListingComponent } from '../listing/listing.component';
 export class SearchComponent implements OnInit {
     results: Business[] = [];
     selectedBusiness: Business;
+    browseType: string = "nearMe";
 
     private logClass:String = "SearchComponent";
 
@@ -38,13 +39,8 @@ export class SearchComponent implements OnInit {
     showListing( id:string ): void {
         this.logger.log(this.logClass + '.showListing( ' + id + ' )');
 
-        this.businessService.getBusiness(+id)
-            .then(business => this.selectedBusiness = business);
-        
-        this.logger.log(this.selectedBusiness.name);
-
         this.nav.push(ListingComponent, {
-            listing: this.selectedBusiness
+            listing: id
         });
     }
 }

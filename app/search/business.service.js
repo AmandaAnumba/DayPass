@@ -28,9 +28,13 @@ var BusinessService = (function () {
     };
     /* Get a specific business */
     BusinessService.prototype.getBusiness = function (id) {
+        // getBusiness(id: number): Promise<Business> {
         this.logger.log('BusinessService.getBusiness( ' + id + ' )');
-        return this.getBusinesses()
-            .then(function (businesses) { return businesses.find(function (business) { return business.id === id; }); });
+        this.list = mock_businesses_1.BUSINESSES;
+        this.selected = this.list.find(function (business) { return business.id === id; });
+        return this.selected;
+        // return this.getBusinesses()
+        //     .then( businesses => businesses.find(business => business.id === id));
     };
     BusinessService = __decorate([
         core_1.Injectable(), 

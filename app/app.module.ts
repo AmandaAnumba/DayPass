@@ -4,7 +4,11 @@ import { IonicApp, IonicModule } from 'ionic-angular';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
+import { AccountComponent } from './account/account.component';
+import { MenuComponent } from './account/menu.component';
 import { ListingComponent } from './listing/listing.component';
+import { ReviewsComponent } from './listing/reviews.component';
+import { ServicesComponent } from './listing/services.component';
 import { LoginComponent } from './user/login.component';
 
 
@@ -15,12 +19,18 @@ import { LoginComponent } from './user/login.component';
     declarations: [
         AppComponent,
         SearchComponent,
+        AccountComponent,
+        MenuComponent,
         ListingComponent,
+        ReviewsComponent,
+        ServicesComponent,
         LoginComponent
     ],
     entryComponents: [
         AppComponent,
         SearchComponent,
+        AccountComponent,
+        MenuComponent,
         ListingComponent,
         LoginComponent
     ],

@@ -12,7 +12,11 @@ var core_1 = require("@angular/core");
 var ionic_angular_1 = require('ionic-angular');
 var app_component_1 = require('./app.component');
 var search_component_1 = require('./search/search.component');
+var account_component_1 = require('./account/account.component');
+var menu_component_1 = require('./account/menu.component');
 var listing_component_1 = require('./listing/listing.component');
+var reviews_component_1 = require('./listing/reviews.component');
+var services_component_1 = require('./listing/services.component');
 var login_component_1 = require('./user/login.component');
 var AppModule = (function () {
     function AppModule() {
@@ -25,12 +29,18 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent,
                 search_component_1.SearchComponent,
+                account_component_1.AccountComponent,
+                menu_component_1.MenuComponent,
                 listing_component_1.ListingComponent,
+                reviews_component_1.ReviewsComponent,
+                services_component_1.ServicesComponent,
                 login_component_1.LoginComponent
             ],
             entryComponents: [
                 app_component_1.AppComponent,
                 search_component_1.SearchComponent,
+                account_component_1.AccountComponent,
+                menu_component_1.MenuComponent,
                 listing_component_1.ListingComponent,
                 login_component_1.LoginComponent
             ],

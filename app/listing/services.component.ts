@@ -5,23 +5,15 @@ import { NavController, NavParams } from 'ionic-angular';
 import { LoggerService } from "../core/logger.service";
 import { Business } from "../search/business";
 import { BusinessService } from "../search/business.service";
-import { ReviewsComponent } from "./reviews.component";
-import { ServicesComponent } from "./services.component";
 
 @Component({
-    templateUrl: 'pages/listing/listing.html',
+    templateUrl: 'pages/listing/services.html',
     providers: [ BusinessService, LoggerService ]
 })
 
-export class ListingComponent implements OnInit {
-    listing: Business;
-    listingId: Number;
+export class ServicesComponent implements OnInit {
 
-    /* define tabs */
-    tab1: any;
-    tab2: any;
-
-    private logClass:String = "ListingComponent";
+    private logClass:String = "ServicesComponent";
 
     constructor(
         private businessService: BusinessService,
@@ -32,15 +24,6 @@ export class ListingComponent implements OnInit {
 
     ngOnInit(): void {
         this.logger.log(this.logClass + '.init()');
-        
-        this.listingId = this.navParams.get('listing');
-        this.logger.log(this.listingId.toString());
-
-        this.listing = this.businessService.getBusiness(+this.listingId);
-        this.logger.log(this.listing.name);
-
-
-            // .then(business => this.listing = business);
     }
 
     goBack() {

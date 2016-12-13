@@ -20,6 +20,7 @@ var SearchComponent = (function () {
         this.nav = nav;
         this.navParams = navParams;
         this.results = [];
+        this.browseType = "nearMe";
         this.logClass = "SearchComponent";
     }
     SearchComponent.prototype.ngOnInit = function () {
@@ -32,13 +33,9 @@ var SearchComponent = (function () {
             .then(function (businesses) { return _this.results = businesses; });
     };
     SearchComponent.prototype.showListing = function (id) {
-        var _this = this;
         this.logger.log(this.logClass + '.showListing( ' + id + ' )');
-        this.businessService.getBusiness(+id)
-            .then(function (business) { return _this.selectedBusiness = business; });
-        this.logger.log(this.selectedBusiness.name);
         this.nav.push(listing_component_1.ListingComponent, {
-            listing: this.selectedBusiness
+            listing: id
         });
     };
     SearchComponent = __decorate([

@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color="primary" no-border-bottom>
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+
+        <ion-title>My Account</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="light-bg">
+
+    <!-- profile info header -->
+    <ion-card>
+        <ion-item>
+            <ion-avatar item-left>
+                <img src="{{ user.avatar }}">
+            </ion-avatar>
+            <h2>{{ user.name }}</h2>
+            <p>Email: {{ user.email }}</p>
+            <p>Phone: {{ user.phone }}</p>
+        </ion-item>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button ion-button clear small>
+                        Update Profile
+                    </button>
+                </ion-col>
+
+                <ion-col text-right>
+                    <button ion-button clear (click)="showMenu($event)">
+                        <ion-icon name="more"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <!-- browse types -->
+    <div padding>
+        <ion-segment [(ngModel)]="browseType">
+            <ion-segment-button value="reservations">
+                Upcoming Reservations
+            </ion-segment-button>
+
+            <ion-segment-button value="deals">
+                Deals
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+</ion-content>
