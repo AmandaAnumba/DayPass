@@ -40,7 +40,7 @@ date
 time
 business name
 user (foreign key -> User )
-stylist (foreign key -> Stylist )
+stylist (foreign key -> stylist )
 isPassed
 isFulfilled
 (if rescheduled just update the appointment)

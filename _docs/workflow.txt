@@ -11,7 +11,7 @@ Iteration 1 : MVP
             * stylists
             * calendar for available appointments
             * reviews
-    - sign up for reservation
+    - make a reservation
     - view reservation confirmation
     - receive confirmation email
 

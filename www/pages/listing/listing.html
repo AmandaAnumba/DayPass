@@ -1,12 +1,11 @@
 <ion-header no-shadow>
     <button ion-button icon-only clear (click)="goBack()">
         <ion-icon name="arrow-back"></ion-icon>
-        Back to results
     </button>
 </ion-header>
 
 
-<ion-content>
+<ion-content id="listing">
     <div class="listing-info">
         <div class="listing__name">{{ listing.name }}</div>
         <div class="listing__addr">{{ listing.address }}</div>
@@ -20,9 +19,7 @@
 </ion-content>
 
 <ion-footer>
-    <ion-tabs class="tabs-basic">
-        <ion-tab tabTitle="Stylists" [root]="rootPage"></ion-tab>
-        <ion-tab tabTitle="Services" [root]="rootPage"></ion-tab>
-        <ion-tab tabTitle="Reviews" [root]="rootPage"></ion-tab>
-    </ion-tabs>
+    <ion-toolbar>
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
 </ion-footer>

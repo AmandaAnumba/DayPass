@@ -1,0 +1,25 @@
+// included styles for account page
+// -------------------------------------------
+
+#account {
+	.user {
+		text-align: center;
+	}
+		
+	ion-avatar img {
+		max-width: 7rem;
+		max-height: 7rem;
+		border-radius: 7rem;
+		display: inline;
+	}
+
+	.update-btn {
+		margin-top: 15px;
+	}
+
+	#browseTypes {
+		margin-top: 10px;
+		border-top: 1px solid #ddd;
+		padding: 10px 25px;
+	}
+}

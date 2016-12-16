@@ -1,7 +1,7 @@
-<ion-menu [content]="content">
+<ion-menu [content]="nav">
     <ion-header no-shadow>
         <ion-toolbar>
-            <ion-title>Pages</ion-title>
+            <ion-title>DayPass</ion-title>
         </ion-toolbar>
     </ion-header>
 
@@ -11,8 +11,9 @@
                 {{p.title}}
             </button>
             <button ion-item (click)="presentLoginModal()">Login</button>
+            <button ion-item>Sign Out</button>
         </ion-list>
     </ion-content>
 </ion-menu>
 
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav [root]="rootPage" #nav swipeBackEnabled="false"></ion-nav>

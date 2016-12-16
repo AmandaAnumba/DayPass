@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
     constructor(
         private businessService: BusinessService,
         private logger: LoggerService,
-        public nav: NavController, 
+        public navCtrl: NavController, 
         public navParams: NavParams
     ) { }
 
@@ -32,6 +32,7 @@ export class SearchComponent implements OnInit {
 
     loadResults(): void {
         this.logger.log(this.logClass + '.loadResults()');
+        
         this.businessService.getBusinesses()
             .then( businesses => this.results = businesses);
     }
@@ -39,7 +40,7 @@ export class SearchComponent implements OnInit {
     showListing( id:string ): void {
         this.logger.log(this.logClass + '.showListing( ' + id + ' )');
 
-        this.nav.push(ListingComponent, {
+        this.navCtrl.push(ListingComponent, {
             listing: id
         });
     }

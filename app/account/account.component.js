@@ -13,19 +13,23 @@ var ionic_angular_1 = require('ionic-angular');
 var logger_service_1 = require("../core/logger.service");
 var user_service_1 = require("../user/user.service");
 var menu_component_1 = require("./menu.component");
+var reservation_service_1 = require("../reservation/reservation.service");
 var AccountComponent = (function () {
-    function AccountComponent(logger, userService, navCtrl, navParams, popoverCtrl) {
+    function AccountComponent(logger, userService, reservationService, navCtrl, navParams, popoverCtrl) {
         this.logger = logger;
         this.userService = userService;
+        this.reservationService = reservationService;
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.popoverCtrl = popoverCtrl;
+        this.reservations = [];
         this.browseType = "reservations";
         this.logClass = "AccountComponent";
     }
     AccountComponent.prototype.ngOnInit = function () {
         this.logger.log(this.logClass + '.init()');
         this.user = this.userService.getUser();
+        this.reservations = this.reservationService.get(this.user.id);
     };
     AccountComponent.prototype.showMenu = function (myEvent) {
         var popover = this.popoverCtrl.create(menu_component_1.MenuComponent);
@@ -36,9 +40,9 @@ var AccountComponent = (function () {
     AccountComponent = __decorate([
         core_1.Component({
             templateUrl: 'pages/account/account.html',
-            providers: [logger_service_1.LoggerService, user_service_1.UserService]
+            providers: [logger_service_1.LoggerService, user_service_1.UserService, reservation_service_1.ReservationService]
         }), 
-        __metadata('design:paramtypes', [logger_service_1.LoggerService, user_service_1.UserService, ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.PopoverController])
+        __metadata('design:paramtypes', [logger_service_1.LoggerService, user_service_1.UserService, reservation_service_1.ReservationService, ionic_angular_1.NavController, ionic_angular_1.NavParams, ionic_angular_1.PopoverController])
     ], AccountComponent);
     return AccountComponent;
 }());

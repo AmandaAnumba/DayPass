@@ -1,54 +1,59 @@
 <ion-header>
-    <ion-navbar color="primary" no-border-bottom>
+    <ion-navbar color="light">
         <button ion-button icon-only menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
 
         <ion-title>My Account</ion-title>
+
+        <!-- <ion-buttons end>
+            <button ion-button icon-only (click)="showMenu($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons> -->
     </ion-navbar>
 </ion-header>
 
 
-<ion-content class="light-bg">
-
-    <!-- profile info header -->
+<ion-content class="light-bg" id="account">
     <ion-card>
-        <ion-item>
-            <ion-avatar item-left>
+        <!-- profile info header -->
+        <ion-item class="user">
+            <ion-avatar>
                 <img src="{{ user.avatar }}">
             </ion-avatar>
             <h2>{{ user.name }}</h2>
             <p>Email: {{ user.email }}</p>
             <p>Phone: {{ user.phone }}</p>
+
+            <button ion-button clear small class="update-btn">
+                Update
+            </button>
         </ion-item>
-
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <button ion-button clear small>
-                        Update Profile
-                    </button>
-                </ion-col>
-
-                <ion-col text-right>
-                    <button ion-button clear (click)="showMenu($event)">
-                        <ion-icon name="more"></ion-icon>
-                    </button>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-card>
-
-    <!-- browse types -->
-    <div padding>
-        <ion-segment [(ngModel)]="browseType">
+        
+        <!-- browse types -->
+        <ion-segment [(ngModel)]="browseType" id="browseTypes">
             <ion-segment-button value="reservations">
-                Upcoming Reservations
+                Reservations
             </ion-segment-button>
 
             <ion-segment-button value="deals">
                 Deals
             </ion-segment-button>
         </ion-segment>
+    </ion-card>
+
+    <div [ngSwitch]="browseType">
+        <div *ngSwitchCase="'reservations'">
+            <ion-card *ngFor="let x of reservations">
+                <ion-card-header>{{ x.business.name }}</ion-card-header>
+                
+                <ion-card-content>
+                    <p>{{ x.time }} on {{ x.date }}</p>
+                </ion-card-content>
+            </ion-card>
+        </div>
+
+        <div *ngSwitchCase="'deals'"></div>
     </div>
 </ion-content>

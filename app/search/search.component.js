@@ -14,10 +14,10 @@ var logger_service_1 = require("../core/logger.service");
 var business_service_1 = require("./business.service");
 var listing_component_1 = require('../listing/listing.component');
 var SearchComponent = (function () {
-    function SearchComponent(businessService, logger, nav, navParams) {
+    function SearchComponent(businessService, logger, navCtrl, navParams) {
         this.businessService = businessService;
         this.logger = logger;
-        this.nav = nav;
+        this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.results = [];
         this.browseType = "nearMe";
@@ -34,7 +34,7 @@ var SearchComponent = (function () {
     };
     SearchComponent.prototype.showListing = function (id) {
         this.logger.log(this.logClass + '.showListing( ' + id + ' )');
-        this.nav.push(listing_component_1.ListingComponent, {
+        this.navCtrl.push(listing_component_1.ListingComponent, {
             listing: id
         });
     };
